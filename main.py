@@ -1,7 +1,7 @@
 import streamlit as st
 import csv
 
-# Function to read the CSV file and convert it to the desired format
+############ Function to read the CSV file and convert it to the desired format######################
 def read_csv_to_dict(file_path):
     program_ratings = {}
     
@@ -29,12 +29,26 @@ for program, ratings in program_ratings_dict.items():
 
 import random
 
+##################################### DEFINING PARAMETERS AND DATASET ################################################################
+# Sample rating programs dataset for each time slot.
+ratings = program_ratings_dict
+
+GEN = 100
+POP = 50
+CO_R = 0.8
+MUT_R = 0.2
+EL_S = 2
+
+all_programs = list(ratings.keys()) # all programs
+all_time_slots = list(range(6, 24)) # time slots
 st.set_page_config(
   page_title="TV Show Scheduling System"
 )
 
+#streamlit header setting
 st.header("TV Show Scheduling System", divider="gray") 
 
+#customize input for crossover rate and mutation rate
 CO_R = st.number_input(
     "Enter your Crossover Rate",
     min_value=0.00,
@@ -46,3 +60,4 @@ MUT_R = st.number_input(
 
 st.write("Crossover Rate: ", CO_R)
 st.write("Mutation Rate: ", MUT_R) 
+#st.dataframe() 
