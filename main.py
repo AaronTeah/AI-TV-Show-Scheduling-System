@@ -41,13 +41,12 @@ POP = 50
 CO_R = 0.8
 MUT_R = 0.2
 EL_S = 2
-
+z = 0
 all_programs = list(ratings.keys()) # all programs
 all_time_slots = list(range(6, 24)) # time slots
 
 #customize input for crossover rate and mutation rate
 do{
-  z = 0
   x = st.number_input(
       "Enter your Crossover Rate",
       min_value=0.00,
