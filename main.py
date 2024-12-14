@@ -28,13 +28,12 @@ for program, ratings in program_ratings_dict.items():
     #print(f"'{program}': {ratings},")
   st.write(f"'{program}': {ratings},")
 
-
 import random
 
 ################################################################################
 #streamlit page title and header setting
 st.set_page_config(
-  page_title="Genetic Algorithm"
+  page_title="TV Show Scheduling System"
 )
 st.header("TV Show Scheduling System", divider="gray") 
 
