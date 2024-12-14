@@ -155,6 +155,9 @@ def genetic_algorithm(initial_schedule, generations=GEN, population_size=POP, cr
 
     return population[0]
 
+##################################################### RESULTS ###################################################################################
 
+# brute force
+initial_best_schedule = finding_best_schedule(all_possible_schedules)
 
 
