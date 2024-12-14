@@ -165,4 +165,6 @@ genetic_schedule = genetic_algorithm(initial_best_schedule, generations=GEN, pop
 
 final_schedule = initial_best_schedule + genetic_schedule[:rem_t_slots]
 
+st.write("Mutation Rate: ", MUT_R) 
+
 
