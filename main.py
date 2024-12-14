@@ -58,6 +58,8 @@ all_time_slots = list(range(6, 24)) # time slots
 #st.write("Crossover Rate: ", CO_R)
 #st.write("Mutation Rate: ", MUT_R) 
 
+st.write("1") 
+
 ######################################### DEFINING FUNCTIONS ########################################################################
 # defining fitness function
 def fitness_function(schedule):
@@ -96,6 +98,8 @@ all_possible_schedules = initialize_pop(all_programs, all_time_slots)
 
 # callin the schedule func.
 best_schedule = finding_best_schedule(all_possible_schedules)
+
+st.write("2") 
 
 ############################################# GENETIC ALGORITHM #############################################################################
 
@@ -155,6 +159,7 @@ def genetic_algorithm(initial_schedule, generations=GEN, population_size=POP, cr
 
     return population[0]
 
+st.write("3") 
 ##################################################### RESULTS ###################################################################################
 
 # brute force
@@ -165,6 +170,6 @@ genetic_schedule = genetic_algorithm(initial_best_schedule, generations=GEN, pop
 
 final_schedule = initial_best_schedule + genetic_schedule[:rem_t_slots]
 
-st.write("Mutation Rate: ", MUT_R) 
+st.write("4") 
 
 
