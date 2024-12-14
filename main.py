@@ -5,5 +5,5 @@ st.set_page_config(
 
 st.header("TV Show Scheduling System", divider="gray") 
 
-x = st.slider("Crossover Rate", 0, 0.95, 25)
-st.write("x = ", x)
+age = st.slider("How old are you?", 0, 130, 25)
+st.write("I'm ", age, "years old")
