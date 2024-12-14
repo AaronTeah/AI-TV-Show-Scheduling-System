@@ -12,8 +12,7 @@ CO_R = st.number_input(
 MUT_R = st.number_input(
     "Enter your Mutation Rate", 
     min_value=0.01,
-    max_value=0.05, 
-    step = 0.02) 
+    max_value=0.05) 
 
 st.write("Crossover Rate: ", CO_R)
 st.write("Mutation Rate: ", MUT_R)
