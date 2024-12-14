@@ -46,17 +46,21 @@ all_programs = list(ratings.keys()) # all programs
 all_time_slots = list(range(6, 24)) # time slots
 
 #customize input for crossover rate and mutation rate
-CO_R = st.number_input(
+x = st.number_input(
     "Enter your Crossover Rate",
     min_value=0.00,
     max_value=0.95)
-MUT_R = st.number_input(
+y = st.number_input(
     "Enter your Mutation Rate", 
     min_value=0.01,
     max_value=0.05) 
 
-st.write("Crossover Rate: ", CO_R)
-st.write("Mutation Rate: ", MUT_R) 
+if st.button("Confirm"): 
+  CO_R = x
+  MUT_R = y
+
+#st.write("Crossover Rate: ", CO_R)
+#st.write("Mutation Rate: ", MUT_R) 
 
 st.write("1") 
 
@@ -164,22 +168,21 @@ st.write("3")
 
 # brute force
 
-if st.button("Confirm"): 
-  initial_best_schedule = finding_best_schedule(all_possible_schedules)
-  
-  rem_t_slots = len(all_time_slots) - len(initial_best_schedule)
-  genetic_schedule = genetic_algorithm(initial_best_schedule, generations=GEN, population_size=POP, elitism_size=EL_S) 
-  
-  final_schedule = initial_best_schedule + genetic_schedule[:rem_t_slots]
-  
-  st.write("4") 
-  
-  #print("\nFinal Optimal Schedule:")
-  st.write("\nFinal Optimal Schedule:")
-  for time_slot, program in enumerate(final_schedule):
-      #print(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
-      st.write(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
-  
-  #print("Total Ratings:", fitness_function(final_schedule))
-  st.write("Total Ratings:", fitness_function(final_schedule))
+initial_best_schedule = finding_best_schedule(all_possible_schedules)
+
+rem_t_slots = len(all_time_slots) - len(initial_best_schedule)
+genetic_schedule = genetic_algorithm(initial_best_schedule, generations=GEN, population_size=POP, elitism_size=EL_S) 
+
+final_schedule = initial_best_schedule + genetic_schedule[:rem_t_slots]
+
+st.write("4") 
+
+#print("\nFinal Optimal Schedule:")
+st.write("\nFinal Optimal Schedule:")
+for time_slot, program in enumerate(final_schedule):
+    #print(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
+    st.write(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
+
+#print("Total Ratings:", fitness_function(final_schedule))
+st.write("Total Ratings:", fitness_function(final_schedule))
 
