@@ -1,4 +1,9 @@
 import streamlit as st
+#streamlit page title and header setting
+st.set_page_config(
+  page_title="TV Show Scheduling System"
+)
+st.header("TV Show Scheduling System", divider="gray") 
 import csv
 
 # Function to read the CSV file and convert it to the desired format
@@ -31,11 +36,7 @@ for program, ratings in program_ratings_dict.items():
 import random
 
 ################################################################################
-#streamlit page title and header setting
-st.set_page_config(
-  page_title="TV Show Scheduling System"
-)
-st.header("TV Show Scheduling System", divider="gray") 
+
 
 #customize input for crossover rate and mutation rate
 CO_R = st.number_input(
