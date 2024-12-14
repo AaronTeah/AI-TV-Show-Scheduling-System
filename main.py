@@ -59,7 +59,7 @@ do{
   if st.button("Confirm"): 
     z = 1
 }
-while(z = 0)
+while(z == 0)
 #st.write("Crossover Rate: ", CO_R)
 #st.write("Mutation Rate: ", MUT_R) 
 
