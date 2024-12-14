@@ -181,3 +181,20 @@ for time_slot, program in enumerate(final_schedule):
 #print("Total Ratings:", fitness_function(final_schedule))
 st.write("Total Ratings:", fitness_function(final_schedule))
 
+################################################################################
+import pandas as pd
+
+# Create a DataFrame for the final schedule
+schedule_data = {
+    "Time Slot": [f"{all_time_slots[i]:02d}:00" for i in range(len(final_schedule))],
+    "Program": final_schedule
+}
+schedule_df = pd.DataFrame(schedule_data)
+
+# Display the schedule table
+st.write("\nFinal Optimal Schedule:")
+st.table(schedule_df)
+
+# Display the total ratings
+st.write("Total Ratings:", fitness_function(final_schedule))
+
