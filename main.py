@@ -79,7 +79,7 @@ if submitted:
 #st.write("Crossover Rate: ", CO_R)
 #st.write("Mutation Rate: ", MUT_R) 
 
-st.write("1") 
+#st.write("1") 
 
 ######################################### DEFINING FUNCTIONS ########################################################################
 # defining fitness function
@@ -120,7 +120,7 @@ all_possible_schedules = initialize_pop(all_programs, all_time_slots)
 # callin the schedule func.
 best_schedule = finding_best_schedule(all_possible_schedules)
 
-st.write("2") 
+#st.write("2") 
 
 ############################################# GENETIC ALGORITHM #############################################################################
 
@@ -180,7 +180,7 @@ def genetic_algorithm(initial_schedule, generations=GEN, population_size=POP, cr
 
     return population[0]
 
-st.write("3") 
+#st.write("3") 
 ##################################################### RESULTS ###################################################################################
 
 # brute force
@@ -192,7 +192,7 @@ genetic_schedule = genetic_algorithm(initial_best_schedule, generations=GEN, pop
 
 final_schedule = initial_best_schedule + genetic_schedule[:rem_t_slots]
 
-st.write("4") 
+#st.write("4") 
 
 ################################################################################
 import pandas as pd
