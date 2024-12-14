@@ -160,4 +160,5 @@ def genetic_algorithm(initial_schedule, generations=GEN, population_size=POP, cr
 # brute force
 initial_best_schedule = finding_best_schedule(all_possible_schedules)
 
-
+rem_t_slots = len(all_time_slots) - len(initial_best_schedule)
+genetic_schedule = genetic_algorithm(initial_best_schedule, generations=GEN, population_size=POP, elitism_size=EL_S)
