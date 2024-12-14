@@ -57,6 +57,7 @@ MUT_R = st.number_input(
 
 st.write("Crossover Rate: ", CO_R)
 st.write("Mutation Rate: ", MUT_R) """
+st.write("Mutation Rate: ", MUT_R) 
 
 ######################################### DEFINING FUNCTIONS ########################################################################
 # defining fitness function
