@@ -33,6 +33,14 @@ for program, ratings in program_ratings_dict.items():
     st.write(f"'{program}': {ratings},")
 
 import random
+
+#####################
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv(file_path)
+st.table(df)
+
 ##################################### DEFINING PARAMETERS AND DATASET ################################################################
 # Sample rating programs dataset for each time slot.
 ratings = program_ratings_dict
