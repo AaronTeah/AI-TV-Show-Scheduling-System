@@ -44,6 +44,20 @@ EL_S = 2
 all_programs = list(ratings.keys()) # all programs
 all_time_slots = list(range(6, 24)) # time slots
 
+# Create a form
+with st.form("input_form"):
+    CO_R = st.number_input("Enter your Crossover Rate", min_value=0.00, max_value=0.95)
+    MUT_R = st.number_input("Enter your Mutation Rate", min_value=0.01, max_value=0.05)
+    
+    # Submit button inside the form
+    submitted = st.form_submit_button("Confirm")
+
+# Code after form submission
+if submitted:
+    st.write("You have confirmed the parameters!")
+    st.write("Crossover Rate: ", CO_R)
+    st.write("Mutation Rate: ", MUT_R) 
+
 #customize input for crossover rate and mutation rate
 #x = st.number_input(
 #    "Enter your Crossover Rate",
@@ -171,15 +185,6 @@ genetic_schedule = genetic_algorithm(initial_best_schedule, generations=GEN, pop
 final_schedule = initial_best_schedule + genetic_schedule[:rem_t_slots]
 
 st.write("4") 
-
-#print("\nFinal Optimal Schedule:")
-#st.write("\nFinal Optimal Schedule:")
-#for time_slot, program in enumerate(final_schedule):
-#    #print(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
-#    st.write(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
-
-#print("Total Ratings:", fitness_function(final_schedule))
-#st.write("Total Ratings:", fitness_function(final_schedule))
 
 ################################################################################
 import pandas as pd
