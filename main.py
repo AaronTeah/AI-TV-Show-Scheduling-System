@@ -1,6 +1,9 @@
 import streamlit as st
 
-#streamlit header setting
+#streamlit page title and header setting
+st.set_page_config(
+  page_title="Genetic Algorithm"
+)
 st.header("TV Show Scheduling System", divider="gray") 
 
 #customize input for crossover rate and mutation rate
