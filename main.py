@@ -5,5 +5,5 @@ st.set_page_config(
 
 st.header("TV Show Scheduling System", divider="gray") 
 
-age = st.slider("How old are you?", 0, 130, 25)
+age = st.slider("How old are you?", 0, 0.95, 0)
 st.write("I'm ", age, "years old")
