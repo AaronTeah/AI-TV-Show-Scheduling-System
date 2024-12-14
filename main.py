@@ -55,13 +55,6 @@ MUT_R = st.number_input(
     min_value=0.01,
     max_value=0.05) 
 
-if st.button("Confirm"):
-    # Code to execute after confirmation
-    st.write("You have confirmed the parameters!")
-    st.write(f"Parameter 1: {param1}")
-    st.write(f"Parameter 2: {param2}")
-    st.write(f"Parameter 3: {param3}")
-
 st.write("Crossover Rate: ", CO_R)
 st.write("Mutation Rate: ", MUT_R) 
 
@@ -170,21 +163,23 @@ st.write("3")
 ##################################################### RESULTS ###################################################################################
 
 # brute force
-initial_best_schedule = finding_best_schedule(all_possible_schedules)
 
-rem_t_slots = len(all_time_slots) - len(initial_best_schedule)
-genetic_schedule = genetic_algorithm(initial_best_schedule, generations=GEN, population_size=POP, elitism_size=EL_S) 
-
-final_schedule = initial_best_schedule + genetic_schedule[:rem_t_slots]
-
-st.write("4") 
-
-#print("\nFinal Optimal Schedule:")
-st.write("\nFinal Optimal Schedule:")
-for time_slot, program in enumerate(final_schedule):
-    #print(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
-    st.write(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
-
-#print("Total Ratings:", fitness_function(final_schedule))
-st.write("Total Ratings:", fitness_function(final_schedule))
+if st.button("Confirm"): 
+  initial_best_schedule = finding_best_schedule(all_possible_schedules)
+  
+  rem_t_slots = len(all_time_slots) - len(initial_best_schedule)
+  genetic_schedule = genetic_algorithm(initial_best_schedule, generations=GEN, population_size=POP, elitism_size=EL_S) 
+  
+  final_schedule = initial_best_schedule + genetic_schedule[:rem_t_slots]
+  
+  st.write("4") 
+  
+  #print("\nFinal Optimal Schedule:")
+  st.write("\nFinal Optimal Schedule:")
+  for time_slot, program in enumerate(final_schedule):
+      #print(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
+      st.write(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
+  
+  #print("Total Ratings:", fitness_function(final_schedule))
+  st.write("Total Ratings:", fitness_function(final_schedule))
 
