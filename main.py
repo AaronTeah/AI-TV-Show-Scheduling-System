@@ -55,6 +55,13 @@ MUT_R = st.number_input(
     min_value=0.01,
     max_value=0.05) 
 
+if st.button("Confirm"):
+    # Code to execute after confirmation
+    st.write("You have confirmed the parameters!")
+    st.write(f"Parameter 1: {param1}")
+    st.write(f"Parameter 2: {param2}")
+    st.write(f"Parameter 3: {param3}")
+
 st.write("Crossover Rate: ", CO_R)
 st.write("Mutation Rate: ", MUT_R) 
 
