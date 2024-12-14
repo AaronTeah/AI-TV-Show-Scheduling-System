@@ -172,4 +172,12 @@ final_schedule = initial_best_schedule + genetic_schedule[:rem_t_slots]
 
 st.write("4") 
 
+#print("\nFinal Optimal Schedule:")
+st.write("\nFinal Optimal Schedule:")
+for time_slot, program in enumerate(final_schedule):
+    #print(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
+    st.write(f"Time Slot {all_time_slots[time_slot]:02d}:00 - Program {program}")
+
+#print("Total Ratings:", fitness_function(final_schedule))
+st.write("Total Ratings:", fitness_function(final_schedule))
 
